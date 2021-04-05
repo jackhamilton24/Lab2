@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">from </span><span class="s1">Invoice </span><span class="s0">import </span><span class="s1">Invoice</span>
+
+<span class="s1">products = {}</span>
+<span class="s1">total_amount = </span><span class="s2">0</span>
+<span class="s1">repeat = </span><span class="s3">''</span>
+<span class="s0">while True</span><span class="s1">:</span>
+    <span class="s1">product = input(</span><span class="s3">'What is your product : '</span><span class="s1">)</span>
+    <span class="s1">unit_price = Invoice().inputNumber(</span><span class="s3">&quot;Please enter unit price : &quot;</span><span class="s1">)</span>
+    <span class="s1">qnt = Invoice().inputNumber(</span><span class="s3">&quot;Please enter quantity of product : &quot;</span><span class="s1">)</span>
+    <span class="s1">discount = Invoice().inputNumber(</span><span class="s3">&quot;Discount percentage (%) : &quot;</span><span class="s1">)</span>
+    <span class="s1">repeat = Invoice().inputAnswer(</span><span class="s3">&quot;Another product? (y,n) : &quot;</span><span class="s1">)</span>
+    <span class="s1">result = Invoice().addProduct(qnt</span><span class="s0">, </span><span class="s1">unit_price</span><span class="s0">, </span><span class="s1">discount)</span>
+    <span class="s1">products[product] = result</span>
+    <span class="s0">if </span><span class="s1">repeat == </span><span class="s3">&quot;n&quot;</span><span class="s1">:</span>
+        <span class="s0">break</span>
+
+<span class="s1">total_amount = Invoice().totalImpurePrice(products)</span>
+
+<span class="s1">print(</span><span class="s3">&quot;Your total pure price is: &quot;</span><span class="s0">, </span><span class="s1">total_amount)</span>
+</pre>
+</body>
+</html>
